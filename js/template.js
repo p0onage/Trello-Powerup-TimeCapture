@@ -28,10 +28,7 @@ TrelloPowerUp.initialize({
       icon: YOUTRACK_ICON,
       text: 'YouTrack',
       callback: function(t){
-        return t.popup({
-          title: "You Track Issue",
-          url: "www.google.com"
-        });
+        window.open("www.google.com",'_blank');
       }
     }];
   }
