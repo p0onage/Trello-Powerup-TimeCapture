@@ -28,7 +28,7 @@ TrelloPowerUp.initialize({
       icon: YOUTRACK_ICON,
       text: 'YouTrack',
       callback: function(t){
-        window.open("www.google.com",'_blank');
+        window.open("http://www.google.com",'_blank');
       }
     }];
   }
