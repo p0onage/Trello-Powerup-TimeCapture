@@ -3,7 +3,7 @@
 var YOUTRACK_ICON = './images/youtrack.png';
 
 var GetYouTrackLinkIfAvailable = function(t){
-  var youTrackUrl = "";
+  var youTrackUrl = "http://source.scannt.lan:8080/";
   t.card('name')
   .get('name')
   .then(function(cardName){
@@ -14,11 +14,12 @@ var GetYouTrackLinkIfAvailable = function(t){
     console.log("found match  : " + !issueNumberMatches)
     console.log("Issue Number  : " + issueNumberMatches[0])
     if(!issueNumberMatches){
-      return null;
+       window.open(youTrackUrl,'_blank');
+    } else {
+      youTrackUrl = "http://source.scannt.lan:8080/issue/$0".replace(/\$0/g, issueNumberMatches[0]);
+      window.open(youTrackUrl,'_blank');
+      console.log("YouTrack Link: " + youTrackUrl)
     }
-    youTrackUrl = "http://source.scannt.lan:8080/issue/$0".replace(/\$0/g, issueNumberMatches[0]);
-    window.open(youTrackUrl,'_blank');
-    console.log("YouTrack Link: " + youTrackUrl)
   });
 };
 
