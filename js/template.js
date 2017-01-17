@@ -10,12 +10,13 @@ var GetYouTrackLinkIfAvailable = function(t){
     var lowercaseName = cardName.toLowerCase();
     var issueNumberRegex = /[A-Za-z\d]{1,4}-[0-9]{1,5}/;
     var issueNumberMatches = lowercaseName.match(issueNumberRegex);
-    console.log("found match  : " + issueNumberMatches)
+    console.log("found match  : " + !issueNumberMatches)
     console.log("Issue Number  : " + issueNumberMatches[0])
     if(!issueNumberMatches){
       return null;
     }
     var youTrackUrl = "http://source.scannt.lan:8080/issue/$0".Replace(/\.$0/g, issueNumberMatches[0]);
+      console.log("YouTrack Link: " + issueNumberMatches[0])
     return youTrackUrl;
   })
 };
@@ -24,6 +25,7 @@ var GetYouTrackLinkIfAvailable = function(t){
 TrelloPowerUp.initialize({
   'card-buttons': function(t, options) {
     var link  = GetYouTrackLinkIfAvailable(t);
+      console.log("YouTrack Link: " + link)
     if(!link){
        return [{
       icon: YOUTRACK_ICON,
