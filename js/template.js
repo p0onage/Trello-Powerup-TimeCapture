@@ -30,6 +30,7 @@ TrelloPowerUp.initialize({
       text: 'YouTrack',
       callback: function(t){
         var link  = GetYouTrackLinkIfAvailable(t);
+        console.log("link being opened :" + link)
         window.open(link,'_blank');
       }
     }];
