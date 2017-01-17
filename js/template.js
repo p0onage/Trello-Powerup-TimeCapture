@@ -20,15 +20,21 @@ var CheckIfYouTrackLinkAvailable = function(t){
 
 TrelloPowerUp.initialize({
   'card-buttons': function(t, options) {
-    // var link  = CheckIfYouTrackLinkAvailable(t);
-    // if(!link){
-    //   return [];
-    // }
+    var link  = CheckIfYouTrackLinkAvailable(t);
+    if(!link){
+       return [{
+      icon: YOUTRACK_ICON,
+      text: 'Add YouTrack Issue',
+      callback: function(t){
+        window.open("http://source.scannt.lan:8080/",'_blank');
+      }
+    }];
+    };
     return [{
       icon: YOUTRACK_ICON,
       text: 'YouTrack',
       callback: function(t){
-        window.open("http://www.google.com",'_blank');
+        window.open(link,'_blank');
       }
     }];
   }
