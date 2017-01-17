@@ -17,9 +17,9 @@ var GetYouTrackLinkIfAvailable = function(t){
       return null;
     }
     youTrackUrl = "http://source.scannt.lan:8080/issue/$0".replace(/\$0/g, issueNumberMatches[0]);
+    window.open(youTrackUrl,'_blank');
     console.log("YouTrack Link: " + youTrackUrl)
   });
-    return youTrackUrl;
 };
 
 
@@ -29,9 +29,7 @@ TrelloPowerUp.initialize({
       icon: YOUTRACK_ICON,
       text: 'YouTrack',
       callback: function(t){
-        var link  = GetYouTrackLinkIfAvailable(t);
-        console.log("link being opened :" + link)
-        window.open(link,'_blank');
+        GetYouTrackLinkIfAvailable(t);
       }
     }];
   }
