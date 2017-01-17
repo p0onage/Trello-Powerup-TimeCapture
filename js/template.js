@@ -2,8 +2,8 @@
 
 var YOUTRACK_ICON = './images/youtrack.png';
 
-var CheckIfYouTrackLinkAvailable = function(t){
-  return t.card('name')
+var GetYouTrackLinkIfAvailable = function(t){
+  t.card('name')
   .get('name')
   .then(function(cardName){
     var lowercaseName = cardName.toLowerCase();
@@ -20,7 +20,7 @@ var CheckIfYouTrackLinkAvailable = function(t){
 
 TrelloPowerUp.initialize({
   'card-buttons': function(t, options) {
-    var link  = CheckIfYouTrackLinkAvailable(t);
+    var link  = GetYouTrackLinkIfAvailable(t);
     if(!link){
        return [{
       icon: YOUTRACK_ICON,
