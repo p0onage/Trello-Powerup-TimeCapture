@@ -12,7 +12,7 @@ var GetYouTrackLinkIfAvailable = function(t){
     var issueNumberMatches = lowercaseName.match(issueNumberRegex);
     console.log("found match  : " + !issueNumberMatches)
     console.log("Issue Number  : " + issueNumberMatches[0])
-    if(!issueNumberMatches){
+    if(issueNumberMatches == null){
       return null;
     }
     var youTrackUrl = "http://source.scannt.lan:8080/issue/$0".Replace(/\.$0/g, issueNumberMatches[0]);
