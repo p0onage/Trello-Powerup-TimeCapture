@@ -12,11 +12,11 @@ var GetYouTrackLinkIfAvailable = function(t){
     var issueNumberMatches = lowercaseName.match(issueNumberRegex);
     console.log("found match  : " + !issueNumberMatches)
     console.log("Issue Number  : " + issueNumberMatches[0])
-    if(issueNumberMatches == null){
+    if(!issueNumberMatches){
       return null;
     }
-    var youTrackUrl = "http://source.scannt.lan:8080/issue/$0".Replace(/\.$0/g, issueNumberMatches[0]);
-      console.log("YouTrack Link: " + issueNumberMatches[0])
+    var youTrackUrl = "http://source.scannt.lan:8080/issue/$0".replace(/\.$0/g, issueNumberMatches[0]);
+      console.log("YouTrack Link: " + youTrackUrl)
     return youTrackUrl;
   })
 };
