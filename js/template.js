@@ -3,6 +3,7 @@
 var YOUTRACK_ICON = './images/youtrack.png';
 
 var GetYouTrackLinkIfAvailable = function(t){
+  var youTrackUrl = "";
   t.card('name')
   .get('name')
   .then(function(cardName){
@@ -15,10 +16,10 @@ var GetYouTrackLinkIfAvailable = function(t){
     if(!issueNumberMatches){
       return null;
     }
-    var youTrackUrl = "http://source.scannt.lan:8080/issue/$0".replace(/\$0/g, issueNumberMatches[0]);
-      console.log("YouTrack Link: " + youTrackUrl)
+    youTrackUrl = "http://source.scannt.lan:8080/issue/$0".replace(/\$0/g, issueNumberMatches[0]);
+    console.log("YouTrack Link: " + youTrackUrl)
+  });
     return youTrackUrl;
-  })
 };
 
 
