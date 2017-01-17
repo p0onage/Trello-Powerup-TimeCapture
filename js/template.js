@@ -1,6 +1,5 @@
 /* global TrelloPowerUp */
 
-var WHITE_ICON = './images/icon-white.svg';
 var YOUTRACK_ICON = './images/youtrack.png';
 
 var CheckIfYouTrackLinkAvailable = function(t){
@@ -21,13 +20,13 @@ var CheckIfYouTrackLinkAvailable = function(t){
 
 TrelloPowerUp.initialize({
   'card-buttons': function(t, options) {
-    var link  = CheckIfYouTrackLinkAvailable(t);
-    if(!link){
-      return [];
-    }
+    // var link  = CheckIfYouTrackLinkAvailable(t);
+    // if(!link){
+    //   return [];
+    // }
     return [{
       icon: YOUTRACK_ICON,
-      url: link,
+      url: "www.google.com",
       text: 'YouTrack'
     }];
   }
