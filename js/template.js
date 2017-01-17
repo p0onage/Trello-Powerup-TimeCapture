@@ -10,6 +10,8 @@ var GetYouTrackLinkIfAvailable = function(t){
     var lowercaseName = cardName.toLowerCase();
     var issueNumberRegex = /[A-Za-z\d]{1,4}-[0-9]{1,5}/;
     var issueNumberMatches = lowercaseName.match(issueNumberRegex);
+    console.log("found match  : " + issueNumberMatches)
+    console.log("Issue Number  : " + issueNumberMatches[0])
     if(!issueNumberMatches){
       return null;
     }
