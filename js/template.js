@@ -15,7 +15,7 @@ var GetYouTrackLinkIfAvailable = function(t){
     if(!issueNumberMatches){
       return null;
     }
-    var youTrackUrl = "http://source.scannt.lan:8080/issue/$0".replace(/\.$0/g, issueNumberMatches[0]);
+    var youTrackUrl = "http://source.scannt.lan:8080/issue/$0".replace(/\$0/g, issueNumberMatches[0]);
       console.log("YouTrack Link: " + youTrackUrl)
     return youTrackUrl;
   })
@@ -24,21 +24,11 @@ var GetYouTrackLinkIfAvailable = function(t){
 
 TrelloPowerUp.initialize({
   'card-buttons': function(t, options) {
-    var link  = GetYouTrackLinkIfAvailable(t);
-      console.log("YouTrack Link: " + link)
-    if(!link){
-       return [{
-      icon: YOUTRACK_ICON,
-      text: 'Add YouTrack Issue',
-      callback: function(t){
-        window.open("http://source.scannt.lan:8080/",'_blank');
-      }
-    }];
-    };
     return [{
       icon: YOUTRACK_ICON,
       text: 'YouTrack',
       callback: function(t){
+        var link  = GetYouTrackLinkIfAvailable(t);
         window.open(link,'_blank');
       }
     }];
