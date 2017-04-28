@@ -1,7 +1,7 @@
 {
-  "name": "YouTrack Issue Linker",
-  "description": "This will link a youtrack issue number on the card to YouTrack",
-  "details": "A static sample Power-Up hosted on GitHub pages. ",
+  "name": "Issue Time Tracker",
+  "description": "This powerup will allow time allocation to trello cards.",
+  "details": "Track Time Allocations On Cards. ",
   "icon": {
     "url": "./images/logo.png"
   },
