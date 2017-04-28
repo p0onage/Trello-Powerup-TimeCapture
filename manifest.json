@@ -1,0 +1,29 @@
+{
+  "name": "YouTrack Issue Linker",
+  "description": "This will link a youtrack issue number on the card to YouTrack",
+  "details": "A static sample Power-Up hosted on GitHub pages. ",
+  "icon": {
+    "url": "./images/logo.png"
+  },
+  "author": "Joshua Duxbury",
+  "capabilities": [
+    "attachment-sections",
+    "attachment-thumbnail",
+    "board-buttons",
+    "callback",
+    "card-badges",
+    "card-buttons",
+    "card-detail-badges",
+    "card-from-url",
+    "format-url",
+    "show-settings"
+  ],
+  "connectors": {
+    "iframe": {
+      "url": "./index.html"
+    }
+  },
+  "recommend": {
+    "urls": []
+  }
+}
